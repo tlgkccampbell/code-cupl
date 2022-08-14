@@ -12,7 +12,7 @@ WinCUPL is, in fact, just a graphical shell over some command-line utilities, wh
 2. Create a VS Code project folder and add a `.pld` file to contain your CUPL code, and optionally an `.si` file with the same name to contain your simulator configuration. The headers of both files must match; you can use the `header` snippet to generate one.
 3. Create a default build task (`F1` > `Tasks: Configure Default Build Task`) that invokes the CUPL compiler via the command line. My `tasks.json` looks something like this:
 
-```json
+```jsonc
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
