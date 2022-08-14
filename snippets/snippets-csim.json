@@ -1,0 +1,18 @@
+{
+	"Standard File Header": {
+		"scope": "csim",
+		"prefix": "header",
+		"body": [
+			"Name     ${1:XXXXX} ;",
+			"Partno   ${2:XXXXX} ;",
+			"Date     ${3:XX} / ${4:XX} / ${5:XX} ;",
+			"Revision ${6:XX} ;",
+			"Designer ${7:XXXXX} ;",
+			"Company  ${8:XXXXX} ;",
+			"Assembly ${9:XXXXX} ;",
+			"Location ${10:XXXXX} ;",
+            "Device   ${11:g16v8} ;"
+		],
+		"description": "Standard CSIM file header"
+	}
+}

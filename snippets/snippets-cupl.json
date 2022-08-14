@@ -1,0 +1,82 @@
+{
+	"Standard File Header": {
+		"scope": "cupl",
+		"prefix": "header",
+		"body": [
+			"Name     ${1:XXXXX} ;",
+			"Partno   ${2:XXXXX} ;",
+			"Date     ${3:XX} / ${4:XX} / ${5:XX} ;",
+			"Revision ${6:XX} ;",
+			"Designer ${7:XXXXX} ;",
+			"Company  ${8:XXXXX} ;",
+			"Assembly ${9:XXXXX} ;",
+			"Location ${10:XXXXX} ;",
+            "Device   ${11:g16v8} ;"
+		],
+		"description": "Standard CUPL file header"
+	},
+    "FIELD Declaration": {
+        "scope": "cupl",
+        "prefix": "field",
+        "body": [
+            "FIELD $1 = [$2];"
+        ]
+    },
+    "PIN Declaration": {
+        "scope": "cupl",
+        "prefix": "pin",
+        "body": [
+            "PIN $1 = $2;"
+        ]
+    },
+    "PINNODE Declaration": {
+        "scope": "cupl",
+        "prefix": "pinnode",
+        "body": [
+            "PINNODE $1 = $2;"
+        ]
+    },
+    "SEQUENCE Declaration": {
+        "scope": "cupl",
+        "prefix": "sequence",
+        "body": [
+            "SEQUENCE ${1:state} {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "TABLE Declaration": {
+        "scope": "cupl",
+        "prefix": "table",
+        "body": [
+            "TABLE ${1:inputs} => ${2:outputs} {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "$MACRO Block": {
+        "scope": "cupl",
+        "prefix": "macro",
+        "body": [
+            "\\$MACRO ${1:name} ${2:args}",
+            "\t$0",
+            "\\$MACRO"
+        ]
+    },
+    "$REPEAT Block": {
+        "scope": "cupl",
+        "prefix": "repeat",
+        "body": [
+            "\\$REPEAT ${1:i} = [$2]",
+            "\t$0",
+            "\\$REPEND"
+        ]
+    },
+    "PROPERTY ATMEL Declaration": {
+        "scope": "cupl",
+        "prefix": "atmel",
+        "body": [
+            "PROPERTY ATMEL { $1 };$0"
+        ]
+    }
+}

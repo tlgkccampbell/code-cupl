@@ -1,0 +1,93 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "CSIM",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#preprocessor"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.other.csim",
+				"match": "(?i)\\b(partno|revision|designer|assembly|device|name|date|company|location|format|var)\\b"
+			},
+			{
+				"name": "keyword.other.csim",
+				"match": "(?i)\\b(order|base|vectors)\\b"
+			}]
+		},
+		"preprocessor": {
+			"patterns": [{
+				"name": "meta.preprocessor.csim",
+				"match": "(?i)^\\$(repeat|trace|exit|simoff|simon|set|comp|out|if|else|endif|macro|call|for|endf|while|endw|do|until)\\b"
+			},
+			{
+				"contentName": "string.quoted.double.csim",
+				"begin": "(?i)^(\\$msg)\\s+(\")",
+				"beginCaptures": {
+					"1": {
+						"name": "meta.preprocessor.csim"
+					},
+					"2": {
+						"name": "string.quoted.double.csim"
+					}
+				},
+				"end": "(\")",
+				"endCaptures": {
+					"1": {
+						"name": "string.quoted.double.csim"
+					}
+				},
+				"patterns": [
+					{
+						"name": "constant.character.escape.csim",
+						"match": "\\\\."
+					}
+				]
+			}]
+		},
+		"strings": {
+			"patterns": [{
+				"name": "string.quoted.single.csim",
+				"begin": "'",
+				"end": "'",
+				"match": "(?i)'[0-9a-fx]+'"
+			},
+			{
+				"name": "string.quoted.double.csim",
+				"match": "(?i)\"[0-9a-fhlzx]+\""
+			}]
+		},
+		"constants": {
+			"patterns": [{
+				"name": "constant.numeric.csim",
+				"match": "%\\d+\\b"
+			},
+			{
+				"name": "constant.numeric.csim",
+				"match": "\\b(0|1)\\b"
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.block.csim",
+				"begin": "/\\*",
+				"end": "\\*/"
+			}]
+		}
+	},
+	"scopeName": "source.csim"
+}

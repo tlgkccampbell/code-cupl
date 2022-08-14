@@ -1,0 +1,44 @@
+{
+  "name": "code-cupl",
+  "displayName": "CUPL Language Support",
+  "description": "This extension provides basic syntax highlighting and snippets for the Universal Compiler for Programmable Logic (CUPL) language.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Programming Languages", "Snippets"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "cupl",
+      "aliases": ["CUPL", "cupl"],
+      "extensions": [".pld"],
+      "configuration": "./language-configuration-cupl.json"
+    },
+    {
+      "id": "csim",
+      "aliases": ["CSIM", "csim"],
+      "extensions": [".si"],
+      "configuration": "./language-configuration-csim.json"
+    }],
+    "grammars": [{
+      "language": "cupl",
+      "scopeName": "source.cupl",
+      "path": "./syntaxes/cupl.tmLanguage.json"
+    },
+    {
+      "language": "csim",
+      "scopeName": "source.csim",
+      "path": "./syntaxes/csim.tmLanguage.json"
+    }],
+    "snippets": [{
+      "language": "cupl",
+      "path": "./snippets/snippets-cupl.json"
+    },
+    {
+      "language": "csim",
+      "path": "./snippets/snippets-csim.json"
+    }]
+  }
+}

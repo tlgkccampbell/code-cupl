@@ -1,0 +1,113 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "CUPL",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#preprocessor"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.cupl",
+				"match": "(?i)\\b(append|assembly|assy|company|condition|date|declare|default|demorgan|designer|device|else|field|fld|format|function|fuse|group|if|jump|loc|location|macro|min|name|next|node|out|partno|pin|pinnode|present|register_select|rev|revision|sequence|sequenced|sequencejk|sequencers|sequencet|table)\\b"
+			},
+			{
+				"match": "(?i)\\b(PROPERTY) (.+?)\\b",
+				"captures": {
+					"1": {
+						"name": "keyword.cupl"
+					},
+					"2": {
+						"name": "variable.other.cupl"
+					}
+				}
+			},
+			{
+				"name": "keyword.operator.logical.cupl",
+				"match": "(!|&|#|\\$)"
+			},
+			{
+				"name": "keyword.operator.arithmetic.cupl",
+				"match": "(\\*\\*|\\*|\\/|%|\\+|-)"
+			}]
+		},
+		"preprocessor": {
+			"patterns": [{
+				"name": "meta.preprocessor.cupl",
+				"match": "(?i)^\\$(define|else|endif|macro|ifdef|ifndef|include|mend|undef)\\b"
+			},
+			{
+				"name": "meta.preprocessor.cupl",
+				"match": "(?i)^\\s*\\$(repeat|repend)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.cupl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.cupl",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constants": {
+			"patterns": [{
+				"name": "constant.numeric.binary.cupl",
+				"match": "(?i)'b'([0-1]+)?"
+			},
+			{
+				"name": "constant.numeric.octal.cupl",
+				"match": "(?i)'o'([0-7]+)?"
+			},
+			{
+				"name": "constant.numeric.decimal.cupl",
+				"match": "(?i)'d'([0-9]+)?"
+			},
+			{
+				"name": "constant.numeric.hexadecimal.cupl",
+				"match": "(?i)'h'([0-9a-f]+)?"
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.block.cupl",
+				"begin": "/\\*",
+				"end": "\\*/"
+			},
+			{
+				"name": "comment.line.double-slash.cupl",
+				"begin": "//",
+				"end": "$"
+			}]
+		},
+		"variables": {
+			"patterns": [{
+				"match": "(?i)\\.(ap|ar|apmux|armux|byp|ca|ce|ck|ckmux|cmp|d|dfb|dq|imux|int|io|ioar|ioap|iock|iod|iol|iosp|iosr|j|k|l|le|lemux|lfb|lq|obs|oe|oemux|pr|r|s|sp|sr|t|tec|tfb|t1|t2)\\b",
+				"captures": {
+					"1": {
+						"name": "variable.language.cupl"
+					}
+				}
+			}]
+		}
+	},
+	"scopeName": "source.cupl"
+}
