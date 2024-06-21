@@ -6,10 +6,10 @@
 			"include": "#comments"
 		},
 		{
-			"include": "#keywords"
+			"include": "#preprocessor"
 		},
 		{
-			"include": "#preprocessor"
+			"include": "#keywords"
 		},
 		{
 			"include": "#strings"

@@ -3,10 +3,10 @@
 	"name": "CSIM",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#preprocessor"
 		},
 		{
-			"include": "#preprocessor"
+			"include": "#keywords"
 		},
 		{
 			"include": "#strings"
@@ -32,7 +32,7 @@
 		"preprocessor": {
 			"patterns": [{
 				"name": "meta.preprocessor.csim",
-				"match": "(?i)^\\$(repeat|trace|exit|simoff|simon|set|comp|out|if|else|endif|macro|call|for|endf|while|endw|do|until)\\b"
+				"match": "(?i)^(\\$(repeat|trace|exit|simoff|simon|set|comp|out|if|else|endif|macro|call|for|endf|while|endw|do|until))\\b"
 			},
 			{
 				"contentName": "string.quoted.double.csim",

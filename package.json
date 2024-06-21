@@ -3,7 +3,7 @@
   "publisher": "tlgkccampbell",
   "displayName": "CUPL Language Support",
   "description": "This extension provides basic syntax highlighting and snippets for the Universal Compiler for Programmable Logic (CUPL) language.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.70.0"
   },
